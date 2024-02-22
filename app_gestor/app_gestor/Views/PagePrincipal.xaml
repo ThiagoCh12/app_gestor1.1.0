@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_gestor.Views.PagePrincipal" IsPresented="True">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Margin="10">
+                <Image Source="img" HorizontalOptions="Center"/>
+                <Label Text="Supervisor" FontSize="Large" HorizontalOptions="Center" Margin="0,0,0,50"/>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="home"/> 
+                    <Button x:Name="btHome" Text="HOME" HorizontalOptions="FillAndExpand" Clicked="btHome_Clicked"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="inserir.png"/>
+                    <Button x:Name="btCadastrar" Text="CADASTRAR" HorizontalOptions="FillAndExpand" Clicked="btCadastrar_Clicked"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="localizar.png"/>
+                    <Button x:Name="btLocalizar" Text="LOCALIZAR" HorizontalOptions="FillAndExpand" Clicked="btLocalizar_Clicked"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="info"/>
+                    <Button x:Name="btSobre" Text="SOBRE" HorizontalOptions="FillAndExpand" Clicked="btSobre_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Title="Page principal">
+            <Label x:Name="testeDb" Text="Ola.."/>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

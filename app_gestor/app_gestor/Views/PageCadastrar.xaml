@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_gestor.Views.PageCadastrar" Title="Cadastro e edição de funcionarios">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="txtCodigo" IsVisible="False" IsEnabled="False"/>
+            <Entry x:Name="txtNome" Keyboard="Default" Placeholder="Nome do funcionário:"/>
+            <Entry x:Name="txtSetor" Keyboard="Default" Placeholder="Setor do funcionário:"/>
+            <Picker x:Name="pkTurno" Title="Turno do funcionário:">
+                <Picker.Items>
+                    <x:String>Manhã</x:String>
+                    <x:String>Tarde</x:String>
+                    <x:String>Noite</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Funcionário favorito:" FontSize="Medium"/>
+                <Switch x:Name="swFavorito" HorizontalOptions="Start"/>
+            </StackLayout>
+            <Editor x:Name="txtDados" Keyboard="Default" Placeholder="Dados da nota" VerticalOptions="FillAndExpand" Margin="20"/>
+            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                <Button x:Name="btSalvar" Text="Inserir" HorizontalOptions="FillAndExpand" Clicked="btSalvar_Clicked"/>
+                <Button x:Name="btExcluir" Text="Excluir" HorizontalOptions="FillAndExpand" IsVisible="False" Clicked="btExcluir_Clicked"/>
+                <Button x:Name="btCancelar" Text="Cancelar" HorizontalOptions="FillAndExpand" Clicked="btCancelar_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

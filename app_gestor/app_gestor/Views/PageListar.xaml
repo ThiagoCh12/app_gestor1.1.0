@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_gestor.Views.PageListar" Title="Listagem de funcionários">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Exibir funcionários favoritos:" FontSize="Medium"/>
+                <Switch x:Name="swFavorito" HorizontalOptions="Start" Toggled="swFavorito_Toggled"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtNome" Keyboard="Default" Placeholder="Nome do funcionario" HorizontalOptions="StartAndExpand"/>
+                <Button x:Name="btLocalizar" Text="Localizar" Clicked="btLocalizar_Clicked"/>
+            </StackLayout>
+            <ListView x:Name="ListaFuncionario" HasUnevenRows="True" SeparatorColor="Gray" Margin="15" ItemSelected="ListaFuncionario_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Id, StringFormat='Codigo:{0}'}"/>
+                                <Label Text="{Binding Nome, StringFormat='Nome:{0}'}"/>
+                                <Label Text="{Binding Setor, StringFormat='Setor:{0}'}"/>
+                                <Label Text="{Binding Source={x:Reference pkTurno}, Path=SelectedItem}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
